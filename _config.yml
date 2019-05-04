@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
+title: Miralcetjf的网络日志
+subtitle: 从现在开始
+description:  静下心来
 keywords:
-author: John Doe
-language:
+author: Miracle TJF
+language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://blog.tangjf.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -73,9 +73,19 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: hexo-theme-next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:miracletjf/miracletjf.github.io.git
+  branch: master
+
+# Algolia 搜索
+algolia:
+  applicationID: 'UA10L04W5M'
+  apiKey: 582cdaea5e89bd6dd75d2f9b26bafbba
+  adminApiKey: c6c62a692a6b85d8608ed742dab00cd2
+  indexName: 'myHexo'
+  chunkSize: 5000
