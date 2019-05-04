@@ -1,11 +1,11 @@
 [submodule "themes/hexo-theme-Anisina"] 
   path = themes/hexo-theme-Anisina
-  url = git@github.com:Haojen/hexo-theme-Anisina.git 
+  url = git://git@github.com:Haojen/hexo-theme-Anisina.git 
 
 [submodule "themes/hexo-theme-next"] 
   path = themes/hexo-theme-next
-  url = git@github.com:iissnan/hexo-theme-next.git
+  url = git://git@github.com:iissnan/hexo-theme-next.git
 
 [submodule "themes/landscape"] 
   path = themes/landscape
-  url = git@github.com:miracletjf/blog-netlify.git
+  url = git://git@github.com:miracletjf/blog-netlify.git
