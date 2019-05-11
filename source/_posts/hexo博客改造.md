@@ -91,6 +91,7 @@ hexo new page categories
 编辑刚建的页面， 即：`/source/categories/index.md`。在顶上配置项添加`type`字段，值为`categories`
 
 ``` md
+---
 title: 分类
 date: 2014-12-22 12:39:04
 type: "categories"
@@ -109,7 +110,7 @@ type: "categories"
 ---
 title: hexo主题配置
 date: 2018-04-13 20:11:30
-categories: 
+categories:
 - hexo
 ---
 ```
@@ -144,8 +145,51 @@ tags:
 
 ### 百度统计
 
+使用百度统计，可以清楚的了解到自己的站点被访问的情况，其中包括被访问的次数，访问者的网站的`ip`个数，访问者所在地区，访问的入口等一些用户可能需要关注的信息。这些都可以通过百度统计观测到，下面我来说一下配置的方法
+
+1. 注册/登录[百度统计](https://tongji.baidu.com)，新建网站列表，查看新建的列表并定位到代码获取页面
+2. 复制`hm.js?`后面的那串`统计脚本id`，参照对比下图:
+![复制](https://i.loli.net/2019/05/11/5cd6e57e51199.png)
+3. 编辑`主题配置文件`，修改字段`baidu_analytics`，值为刚刚让你复制的那个`统计脚本id`
+4. 致此，你已经完成了，网站的`百度统计`接入。
+
 ### 阅读次数（leancloud）
 
+上文配置了`百度统计`的功能，为了让我们更好的监测整个站点的访客，用户来源等站点层面的数据统计。而`阅读`次数则是针对每篇博文的用户浏览数进行统计的，从而更好的了解到自己的哪篇文章更受读者们的喜爱。接下来开始配置：
+
+#### 使用leancloud
+
+首先我们统计数据要用到数据库，我们选择使用[leancloud](https://leancloud.cn/),没有账号就先注册一个，流程很简单就不赘述了。
+
+#### 创建应用
+
+1. 进入控制台
+2. 点击创建应用，应用名称自定义即可，我们自己用就用一个开发版的就行（反正没有很多的访问量），有需求的可以使用商用版
+![创建应用](https://i.loli.net/2019/05/11/5cd6ea05a213a.png)
+3. 创建`Class`，命名必须为`Counter`，必须为`Counter`，必须为`Counter`(说三遍！)。设置数据条目的默认`ALC权限`，选择`无限制`！
+![创建Class](https://i.loli.net/2019/05/11/5cd6ec1fcd4d6.png)
+4. 获取`AppId`以及`AppKey`，点击左侧菜单栏`设置`，然后再点击`应用key`,再这里我们就可以看到我们要的这两个`key`了(这两个key一定不能公开分享出去，不然别人也就有机会使用你的数据库来读写数据了，这是非常危险的行为)
+![AppId&&AppKey](https://i.loli.net/2019/05/11/5cd6ecd152b1c.png)
+
+#### 配置本地主题配置文件
+
+打开本地`主题配置文件`，找到一下字段，更改对应的`app_id`和`app_key`为刚刚我们打开页面的对应值
+
+``` yml
+leancloud_visitors:
+  enable: true
+  app_id: #AppId
+  app_key: #AppKey
+```
+
+这个时候我们已经完成了，对文章阅读次数统计的功能，重新发布后，打开文章即可在文章标题下面看到效果。
+
+有一个注意点：记录文章访问量的唯一标识符为`文章标题`和`发布日期`两个字段，如果更改其中任何一个，都会使`统计数`变为`0`
+
 ### 搜索（Algolia）
+
+详细的配置请参考：[第三方搜索服务-Algolia](http://theme-next.iissnan.com/third-party-services.html#algolia-search)
+
+关于上面的配置，可能会出现点击搜索没有反应的问题。你得参考[这里解决](https://github.com/iissnan/theme-next-docs/issues/162),看点赞最高的那一个的回答。
 
 ## 升级HTTPS
