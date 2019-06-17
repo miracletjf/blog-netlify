@@ -84,8 +84,8 @@ deploy:
 
 # Algolia 搜索
 algolia:
-  applicationID: 'UA10L04W5M'
-  apiKey: 582cdaea5e89bd6dd75d2f9b26bafbba
-  adminApiKey: c6c62a692a6b85d8608ed742dab00cd2
-  indexName: 'myHexo'
+  applicationID: 'LIFSOLIF32'
+  apiKey: 9ccb06ac00e706d577e62e6d6bbbd4f1
+  adminApiKey: a2aa499add498a48ccb950a9ca81cb09
+  indexName: 'search'
   chunkSize: 5000
