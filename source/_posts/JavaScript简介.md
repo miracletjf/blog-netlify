@@ -18,6 +18,8 @@ categories:
 - `TC39`经过数月的努力完成了`ECMA-262` ---- 定义一种名为`ECMAScript`的新脚本语言的`标准`
 - `1997`年`ISO/IEC(国际标准化组织和国际电工委员会)`也采用了`ECMAScript`作为标准
 
+<!-- more -->
+
 ## JavaScript 实现
 
 一个完整`JavaScript`的实现应该由以下三个不同部分组成:
