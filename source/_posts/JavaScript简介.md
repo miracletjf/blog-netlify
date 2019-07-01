@@ -4,7 +4,7 @@ date: 2019-06-13 22:45:07
 tags:
   - javaScript
 categories:
-  - [读书笔记,JavaScript高程]
+  - [读书笔记, JavaScript高程]
 ---
 
 ## JavaScript 简史
